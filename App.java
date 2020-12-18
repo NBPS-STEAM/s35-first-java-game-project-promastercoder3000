@@ -11,7 +11,7 @@ public class App {
         // start of first nested while loop
         while(True){ // this while loop will pretty much start the game, ask the player to say yes or no, kinda unimportant but adds to sophistication      
           System.out.println("Welcome to the game! You'll be embarking on a mining mission.");
-          System.out.println("To win, you need to not only acquire a net worth of fifteen dollars, but you also need at least one diamond, two gold, four silver, and six bronze to win.");
+          System.out.println("To win, you need to not only acquire a net worth of fifteen dollars, but you also need 200 pounds ( in weight ) worth of items to win.");
           System.out.println("Sounds hard? Well, that's life. Let's get started!");
           System.out.println("(The game has begun, and miner Dawson meets you at the mining station.");
           System.out.println("Greetings, fellow miner.");
