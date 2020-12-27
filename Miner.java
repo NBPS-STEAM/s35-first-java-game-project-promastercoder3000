@@ -52,7 +52,7 @@ public class Miner{
             weightInPounds += 25;
           }
   }
-    if (weightInPounds >= 200) && (wealth += 1.75 ){
+    if (weightInPounds >= 200 && wealth >= 15 ){
         System.out.println("You've met the requirements to win! Nice!");
         return true;
     }
