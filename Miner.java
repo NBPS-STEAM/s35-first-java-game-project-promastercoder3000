@@ -1,6 +1,7 @@
 import java.util.ArrayList; // we import this class
 // to create an arraylist that unlike an array, CAN BE resized,
 // and so we can add items to the player's inventory.
+import java.util.Random; // class that is imported to generate random values through insantiated random objects 
 
 
 public class Miner{
@@ -23,11 +24,16 @@ public class Miner{
 
   //method for finding bronze/silver/gold/diamond below
   // in this method, we'll have to :
+  // generate a random number and find a random index
   // add the random material to the arraylist
   // increase the wealth of the player depending on material found
   // add to weight of pounds depending on material found
   public void findRandMaterial(){ 
-
+      Random rand = new Random(); // here we instantiate a random object that will later be used in our code.
+      int randItem = rand.nextInt(materials.length); // here, we create an integer variable called randItem that generates a random number from 0
+      // to the length of the array. We will use this to capture a random index from the materials array.
+      playerInventory.add(materials[randItem]);
+      
   }
 
   public void takeDamageOrFindMaterial(){ // here we'll either take damage to the player or find a material for the player's inventory and increase the wealth

@@ -6,7 +6,7 @@ public class App {
       while(true){ // Everything is in THIS while loop
         // start of first nested while loop
         while(true){ // this while loop will pretty much start the game, ask the player to say yes or no, adds to sophistication      
-          Miner MinerObj = new Miner(100, 0.0, 0);    // create our "Miner" object, which is essentially the player.
+          Miner MinerObj = new Miner(100, 0.0, 0);    // create our "Miner" object, which is the player.
           System.out.println("Welcome to the game! You'll be embarking on a mining mission.");
           System.out.println("To win, you need to not only acquire a net worth of fifteen dollars, but you also need 200 pounds ( in weight ) worth of items to win.");
           System.out.println("Sounds hard? Well, that's life. Let's get started!");
@@ -29,7 +29,7 @@ public class App {
             }
           }
       }
-    // end of first while loop
+    // end of first nested while loop
     // __________________________
     // start of second nested while loop
 
