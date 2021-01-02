@@ -51,7 +51,7 @@ public class Miner{
   // For purposes of abstraction, all these if statements are contained within the below method. Many lines of code have been simplified into a single method
   // that we will call in the main class, App.
   public void findRandMaterial(){ 
-      Random rand = new Random(); // here we instantiate a random object that will later be used in our code.
+      Random rand = new Random(); // here we instantiate a random object that will be used in our code.
       int randItem = rand.nextInt(materials.length); // here, we create an integer variable called randItem that generates a random number from 0
       // to the length of the array. We will use this to capture a random index from the materials array.
       playerInventory.add(materials[randItem]);
@@ -86,9 +86,11 @@ public class Miner{
     System.out.println("Machine: The weight in pounds of our container is " + weightInPounds + " pounds");
   }
 
-  public void takeDamageOrFindMaterial()
-  { // here we'll either take damage to the player or find a material for the player's inventory and increase the wealth
-  ;    
+  public void takeDamageOrFindMaterial() { // here we'll either take damage to the player or find a material for the player's inventory and increase the wealth all based on a randomly generated number.
+   Random rand = new Random(); // instantiate an object called "rand" from the random class 
+   int randNumber = rand.nextInt(1); // create an integer variable called randNumber that generates a random number from, by default, 0, to the specified number within the parenthesis, which in this case, is 1.
+   
+
   }
   
   public boolean checkRequirementsToWin(){  //here, we'll check for a net worth of 15 dollars, 200 pounds in weight of materials. 
