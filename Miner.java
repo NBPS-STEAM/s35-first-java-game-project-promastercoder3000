@@ -3,7 +3,6 @@ import java.util.ArrayList; // we import this class
 // and so we can add items to the player's inventory.
 import java.util.Random; // class that is imported to generate random values through insantiated random objects 
 
-
 public class Miner{
   double wealth; // variable to represnt player's wealth
   int health; //player's health when fighting the moles ( underground animals)
@@ -84,17 +83,39 @@ public class Miner{
     System.out.println("Machine: Now, here is everything in our container. " + playerInventory);
     System.out.println("Machine: Our net worth is now: " + wealth + " dollars");
     System.out.println("Machine: The weight in pounds of our container is " + weightInPounds + " pounds");
+    System.out.println("Machine: We are at " + health + " health left.");
   }
 
   public void takeDamageOrFindMaterial() { // here we'll either take damage to the player or find a material for the player's inventory and increase the wealth all based on a randomly generated number.
    Random rand = new Random(); // instantiate an object called "rand" from the random class 
-   int randNumber = rand.nextInt(1); // create an integer variable called randNumber that generates a random number from, by default, 0, to the specified number within the parenthesis, which in this case, is 1.
-   
-
+   int randNumber = rand.nextInt(1); // create an integer variable called randNumber that generates a random number from, by default, 0, to the specified number within the parenthesis, which in this case, is 1.\
+   if (randNumber == 0){
+     findRandMaterial();
+   }
+   else if (randNumber == 1){
+     takeDamage();
+   }
   }
   
   public boolean checkRequirementsToWin(){  //here, we'll check for a net worth of 15 dollars, 200 pounds in weight of materials. 
+    if(wealth >= 15 && weightInPounds >= 200){
+      System.out.println("Machine: We have acquired the expected net worth from our materials, which is $15, and the expected total weight in pounds of our inventory, which is 200 pounds.");
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+}
+
+public boolean checkPlayerHealth(){
+  if (health <= 0){
+    System.out.println("Machine: Poweri..ng.. d..ow...n...");
     return true;
+  }
+  else {
+    return false;
+  }
 }
 
 }
