@@ -62,7 +62,27 @@ public class App {
     // __________________________
     // start of second nested while loop
         while(true){
-          ;
+          System.out.println("Machine: I have located a bump swelling in size within the dirt-wall of the tunnel. Shall we approach it?");
+          while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
+            System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
+            String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
+            if (answer.equals("Yes") || answer.equals("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
+              Thread.sleep(1000);
+              System.out.println("Machine: Affirmative. Approaching...");
+            }
+            else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason)
+              Thread.sleep(1000);
+              System.out.println("Machine: Okay, we will bail out. You are quite a boring one.");
+              Thread.sleep(1000);
+              System.out.println("(The ship starts to accelerate and looks for the next indicator of an object within the tunnel.)");
+              Thread.sleep(1000);
+              break;
+              // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the game continues.
+            }
+            else {
+              System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
+            }
+
         }
       }       
 }
