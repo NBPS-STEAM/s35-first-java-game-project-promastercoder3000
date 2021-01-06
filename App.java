@@ -5,8 +5,8 @@ public class App {
       Scanner input = new Scanner(System.in);
       while(true){ // Everything is in THIS while loop
         // start of first nested while loop
-        while(true){ // this while loop will pretty much start the game, ask the player to say yes or no, adds to sophistication      
-          Miner MinerObj = new Miner(100, 0.0, 0);   // create our "Miner" object, which is the player.
+        Miner MinerObj = new Miner(100, 0.0, 0);  // create our "Miner" object, which is the player.
+        while(true){ // this while loop will pretty much start the game, ask the player to say yes or no, adds to sophistication     
           System.out.println("(Welcome to the game! You'll be embarking on a mining mission.)"); // This while loop consists of many "System.out.println" statements that add to the sophistication of the game by introducing simple and basic dialogue.
           Thread.sleep(1000); // Thread.sleep() pauses the execution of the program for a prescribed amount of time. Thread. followed by the "sleep" function, is the first step in delaying a program's execution. Parenthesis are then added at the end, where you put a certain amount of time ( in milliseconds ) to pause the running of the program. 1000 milliseconds is equal to 1 second, and there is a one-second pause between each line of dialogue; meanwhile, 500 milliseconds is 0.5 seconds ( half a second ).
           System.out.println("(To win, you need to not only acquire a net worth of fifteen dollars, but you also need 200 pounds ( in weight ) worth of items to win.)");
@@ -62,28 +62,58 @@ public class App {
     // __________________________
     // start of second nested while loop
         while(true){
-          System.out.println("Machine: I have located a bump swelling in size within the dirt-wall of the tunnel. Shall we approach it?");
-          while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
-            System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
-            String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
-            if (answer.equals("Yes") || answer.equals("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
+            System.out.println("Machine: I have located a bump swelling in size within the dirt-wall of the tunnel. Shall we approach it?");
+            while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
+              System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
+              String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
+              if (answer.equals("Yes") || answer.equals("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
+                Thread.sleep(1000);
+                System.out.println("Machine: Affirmative. Approaching...");
+                MinerObj.takeDamageOrFindMaterial();
+                break;
+              }
+              else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason)
+                Thread.sleep(1000);
+                System.out.println("Machine: Okay, we will bail out. You are quite a boring one.");
+                Thread.sleep(1000);
+                System.out.println("(The ship starts to accelerate and looks for the next indicator of an object within the tunnel.)");
+                Thread.sleep(1000);
+                break;
+                // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the game continues.
+              }
+              else {
+                System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
+              }
+          }
+            Thread.sleep(1000);
+            if(MinerObj.checkPlayerHealth() == true){
+              System.out.println("Machine: Uh... oh..");
+              Thread.sleep(500);
+              System.out.println("Machine: Poweri..ng.. d..ow...n...");
               Thread.sleep(1000);
-              System.out.println("Machine: Affirmative. Approaching...");
-            }
-            else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason)
-              Thread.sleep(1000);
-              System.out.println("Machine: Okay, we will bail out. You are quite a boring one.");
-              Thread.sleep(1000);
-              System.out.println("(The ship starts to accelerate and looks for the next indicator of an object within the tunnel.)");
+              System.out.println("(Your ship breaks down in the Earth's dirt interior, and you remain stuck there for a long time..)");
               Thread.sleep(1000);
               break;
-              // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the game continues.
             }
-            else {
-              System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
+            else if(MinerObj.checkRequirementsToWin() == true){
+              System.out.println("Machine: We have acquired the expected net worth from our materials, which is $15, and the expected total weight in pounds of our inventory, which is 200 pounds.");
+              Thread.sleep(1000);
+              System.out.println("Machine: Good job. We will now be heading back to the station to show Mr. Dawson the resources we have collected. Hooray!");
+              Thread.sleep(1000);
+              System.out.println("(You have won the game! As for how the story goes, basically, Miner Dawson sells the resources you have collected and gives you %50 of the profits made. Not too bad.");
+              Thread.sleep(1000);
+              break;
             }
+            System.out.println("Machine: I will inform you of all statistics concerning our journey.");
+            Thread.sleep(500);
+            MinerObj.printStats();
+            Thread.sleep(1000);
+            System.out.println("(The machine begins to move and dig rapidly in order to find potential resources across the dirt tunnels.)");
+            Thread.sleep(1000);
 
-        }
-      }       
+      }    
+        System.out.println("(Would you like to restart the game?)");
 }
-}
+    }
+
+     }

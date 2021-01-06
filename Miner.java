@@ -83,9 +83,12 @@ public class Miner{
     // as well as the variables wealth and weightInPounds, which represent the player's current statistics ( how much money they have and how much their inventory weighs)
     System.out.println("Machine: Now, here is everything in our container. " + playerInventory);
     Thread.sleep(500);
-    System.out.println("Machine: Our net worth is now: " + wealth + " dollars");
+    System.out.println("Machine: Our current net worth is: " + wealth + " dollars");
+    Thread.sleep(500);
     System.out.println("Machine: The weight in pounds of our container is " + weightInPounds + " pounds");
+    Thread.sleep(500);
     System.out.println("Machine: We are at " + health + " health left.");
+    Thread.sleep(1000);
   }
 
   public void takeDamageOrFindMaterial() { // here we'll either take damage to the player or find a material for the player's inventory and increase the wealth all based on a randomly generated number.
@@ -101,7 +104,6 @@ public class Miner{
   
   public boolean checkRequirementsToWin(){  //here, we'll check for a net worth of 15 dollars, 200 pounds in weight of materials. 
     if(wealth >= 15 && weightInPounds >= 200){
-      System.out.println("Machine: We have acquired the expected net worth from our materials, which is $15, and the expected total weight in pounds of our inventory, which is 200 pounds.");
       return true;
     }
     else
@@ -112,7 +114,6 @@ public class Miner{
 
 public boolean checkPlayerHealth(){
   if (health <= 0){
-    System.out.println("Machine: Poweri..ng.. d..ow...n...");
     return true;
   }
   else {
