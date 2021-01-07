@@ -31,7 +31,7 @@ public class Miner{
   public void takeDamage(){ 
       // this method is for taking damage to the player's machine, which is a side struggle of the game that the player must worry about.
     System.out.println("Machine: Mole spotted! Ahh!");
-    Thread.sleep(500);// Thread.sleep() pauses the execution of the program for a prescribed amount of time. Thread. followed by the "sleep" function, is the first step in delaying a program's execution. Parenthesis are then added at the end, where you put a certain amount of time ( in milliseconds ) to pause the running of the program. 1000 milliseconds is equal to 1 second, and there is a one-second pause between each line of dialogue; meanwhile, 500 milliseconds is 0.5 seconds ( half a second ).
+    delayTime(1000);
     health = health - 10; // take away 10 from the set health of the player, which is set to 100 in the App class.
     System.out.println("Machine: The mole has clawed at me and drained 10% of my battery. I'm now at " + health + " health left!\n Please be careful, or we'll both be stuck and buried within the dirt of the Earth, unable to move!"); //print out player's health after they're damaged.
   }
@@ -82,13 +82,13 @@ public class Miner{
     // here we will print out the object's arraylist, which represents the inventory of the player,
     // as well as the variables wealth and weightInPounds, which represent the player's current statistics ( how much money they have and how much their inventory weighs)
     System.out.println("Machine: Now, here is everything in our container. " + playerInventory);
-    Thread.sleep(500);
+    delayTime(500);
     System.out.println("Machine: Our current net worth is: " + wealth + " dollars");
-    Thread.sleep(500);
+    delayTime(500);
     System.out.println("Machine: The weight in pounds of our container is " + weightInPounds + " pounds");
-    Thread.sleep(500);
+    delayTime(500);
     System.out.println("Machine: We are at " + health + " health left.");
-    Thread.sleep(1000);
+    delayTime(1000);
   }
 
   public void takeDamageOrFindMaterial() { // here we'll either take damage to the player or find a material for the player's inventory and increase the wealth all based on a randomly generated number.
