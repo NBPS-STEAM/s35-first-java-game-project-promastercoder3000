@@ -79,13 +79,13 @@ public class App {
             while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
               System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
               String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
-              if (answer.equals("Yes") || answer.equals("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
+              if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // user might forget to capitalize, or might capitalize wrong letters, which is okay, as long as they spell "yes" correctly.
                 delayTime(1000);
                 System.out.println("Machine: Affirmative. Approaching...");
                 MinerObj.takeDamageOrFindMaterial();
                 break;
               }
-              else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason)
+              else if (answer.equals("No") || answer.equals("no") || answer.equals("nO") || answer.equals("NO")){ // user might type no ( for whatever reason). (capitalization doesnt matter)
                 delayTime(1000);
                 System.out.println("Machine: Okay, we will bail out. You are quite a boring one.");
                 delayTime(1000);
