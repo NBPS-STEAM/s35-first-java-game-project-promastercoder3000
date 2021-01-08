@@ -31,7 +31,7 @@ public class Miner{
   public void takeDamage(){ 
       // this method is for taking damage to the player's machine, which is a side struggle of the game that the player must worry about.
     System.out.println("Machine: Mole spotted! Ahh!");
-    App.delayTime(1000);
+    App.delayTime(3000);
     health = health - 10; // take away 10 from the set health of the player, which is set to 100 in the App class.
     System.out.println("Machine: The mole has clawed at me and drained 10% of my battery. I'm now at " + health + " health left!\n Please be careful, or we'll both be stuck and buried within the dirt of the Earth, unable to move!"); //print out player's health after they're damaged.
   }
@@ -81,47 +81,47 @@ public class Miner{
   public void printStats(){
     // here we will print out the object's arraylist, which represents the inventory of the player,
     // as well as the variables wealth and weightInPounds, which represent the player's current statistics ( how much money they have and how much their inventory weighs)
-    System.out.println("Machine: Now, here is everything in our container. " + playerInventory);
-    App.delayTime(500);
-    System.out.println("Machine: Our current net worth is: " + wealth + " dollars");
-    App.delayTime(500);
-    System.out.println("Machine: The weight in pounds of our container is " + weightInPounds + " pounds");
-    App.delayTime(500);
-    System.out.println("Machine: We are at " + health + " health left.");
+    System.out.println("Machine: Now, here is everything in our container. " + playerInventory); // print out the user's arraylist ( a side feature of the game to showcase their progress)
     App.delayTime(1000);
+    System.out.println("Machine: Our current net worth is: " + wealth + " dollars"); // print out the user's money stored in the integer variable wealth ( so we can demonstrate how much money the user has and how far away they are from getting the $15 requisite to win the game
+    App.delayTime(1000);
+    System.out.println("Machine: The weight in pounds of our container is " + weightInPounds + " pounds"); // print out the integer variable weightinpounds to demonstrate the weight in pounds of the user's inventory and how far away they are from getting the requisite 200 pounds to win the game
+    App.delayTime(1000);
+    System.out.println("Machine: We are at " + health + " health left."); // print out how much health the machine( basically the player) has to show how far away they are from dying ( if it hits 0 they die and lose the game.)
+    App.delayTime(3000);
   }
 
   public void takeDamageOrFindMaterial() { // here we'll either take damage to the player or find a material for the player's inventory and increase the wealth all based on a randomly generated number.
    Random rand = new Random(); // instantiate an object called "rand" from the random class 
-   int randNumber = rand.nextInt(3); // create an integer variable called randNumber that generates a random number from, by default, 0, up to, but not including, the specified number within the parenthesis, which in this case, is 2.\
-   if (randNumber == 0){
-     findRandMaterial();
+   int randNumber = rand.nextInt(3); // create an integer variable called randNumber that generates a random number from, by default, 0, up to, but not including, the specified number within the parenthesis, which in this case, is 2. There are three possible numbers that can be randomly generated: 0, 1, and 2.
+   if (randNumber == 0){ // if 0 is the number generated, we call the findRandMaterial() method, to find a random material for the user.
+     findRandMaterial(); 
    }
-   else if (randNumber == 1){
+   else if (randNumber == 1){ // else if randnumber is 1, then we take damage to the user's ship by calling the takeDamage() method.
      takeDamage();
    }
-   else{
+   else{ // this else statement is called when 0 and 1 have not been generated ; essentially, this is the case when 2 has been generated. however, i have chosen to end this series of statemenets in an else statement rather than an else if statement due to personal preferences, but it is 100% fine to end it with an else if statement.
      System.out.println("Machine: False alarm. Nothing here to dig... Oh well....");
-     App.delayTime(1000);
+     App.delayTime(3000);
    }
   }
   
   public boolean checkRequirementsToWin(){  //here, we'll check for a net worth of 15 dollars, 200 pounds in weight of materials. 
-    if(wealth >= 15 && weightInPounds >= 200){
-      return true;
+    if(wealth >= 15 && weightInPounds >= 200){ // we use a compound and statement to determine whether the user has achieved a net worth of 15 dollars and 200 pounds in weight worth of material. if this is true, the method will return true, and this boolean value will be used to tell the user they've won the game.
+      return true; // return true if above condition is true.
     }
     else
     {
-      return false;
+      return false; // return false is above condition is NOT true; therefore, nothing will really happen.
     }
 }
 
 public boolean checkPlayerHealth(){
-  if (health <= 0){
-    return true;
+  if (health <= 0){ // if the player's health hits 0 or goes less than that, this method returns false. we will be using this method to determine if the user's machine has reached 0 health, meaning they've lost.
+    return true; // return true if the above condition is true
   }
   else {
-    return false;
+    return false; // return false if the player's health has not hit 0, and the method essentially does nothing.
   }
 }
 
