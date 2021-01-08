@@ -13,6 +13,7 @@ public class App {
         }
       }
 
+    // THROUGHOUT THE CODE, WE WILL BE CALLING THE DELAYTIME() METHOD TO DELAY EXECUTION OF THE PROGRAM FOR MAINLY DIALOGUE PURPOSES AND SOME SENSE OF REALISM.
     public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
       boolean loopVar = true;
@@ -36,7 +37,7 @@ public class App {
           while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
             System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
             String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
-            if (answer.equals("Yes") || answer.equals("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
+            if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
               delayTime(3000);
               System.out.println("Miner Dawson: Alright, lets go!");
               break; // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the dialogue ceontinues.
@@ -117,13 +118,28 @@ public class App {
               delayTime(3000);
               break;
             }
-            System.out.println("Machine: I will inform you of all statistics concerning our journey.");
-            delayTime(1000);
-            MinerObj.printStats();
+            delayTime(2000);
+            while true(){
+              System.out.println("Machine: Would you like to know your current statistics?");
+              String answer = input.nextLine(); // // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
+              if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // If the user inputs yes, then the below happens. ( user might forget to captialize "yes", but as long as they spell it correctly, the program will accept the input.)
+                delayTime(1000);
+                MinerObj.printStats(); // call the printStats() method on the object, which will print out the player's wealth, inventory, weight in pounds of their inventory, and the health of their ship.
+              }
+              else if(answer.equals("No") || answer.equals("no") || answer.equals("nO") || answer.equals("NO")){ // if the user inputs no, then the below happens. ( user might forget to capitalize "no", but as long as they spell it correctly, the program will accept the input. )
+                delayTime(1000);
+                System.out.println("Machine: Okay."); // no method on the object is called.
+              }
+              else{
+                System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
+              }
+
+              }
             delayTime(3000);
             System.out.println("(The machine begins to move and dig rapidly in order to find potential resources across the dirt tunnels.)");
             delayTime(3000);
 
+            }
       }    
         System.out.println("(Would you like to restart the game?)");
         while(true){ // nested while loop
@@ -148,4 +164,4 @@ public class App {
 }
     }
 
-     }
+     
