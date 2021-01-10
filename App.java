@@ -22,53 +22,53 @@ public class App {
         Miner MinerObj = new Miner(100, 0.0, 0);  // create our "Miner" object, which is the player.
         while(true){ // this while loop will pretty much start the game, ask the player to say yes or no, adds to sophistication     
           System.out.println("(Welcome to the game! You'll be embarking on a mining mission.)"); // This while loop consists of many "System.out.println" statements that add to the sophistication of the game by introducing simple and basic dialogue.
-          delayTime(3000); // calling the delayTime function, substituting 1000 into the parenthesis.
+          delayTime(6000); // calling the delayTime function, substituting 1000 into the parenthesis.
           System.out.println("(To win, you need to not only acquire a net worth of fifteen dollars, but you also need 200 pounds ( in weight ) worth of items to win.)");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("(Sounds hard? Well, that's life. Let's get started!)");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("(The game has begun, and miner Dawson meets you at the mining station.");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("Miner Dawson: Greetings, fellow miner.");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("Miner Dawson: We've built a brand-new 'Dirt-Stone Digging Machine' for you. It can speak and burrow through the Earth quicky and efficiently. Would you like to hop in and go on a.. ");
-          delayTime(1000);
+          delayTime(6000);
           System.out.println("Miner Dawson: Mining trip!?!?!");
           while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
             System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
             String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
             if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
-              delayTime(3000);
+              delayTime(6000);
               System.out.println("Miner Dawson: Alright, lets go!");
               break; // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the dialogue ceontinues.
             }
             else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason), and whether it is capitalized or not, the program offers a humorous response back, and the while loop continues to reiterate.
-              delayTime(3000);
+              delayTime(6000);
               System.out.println("Miner dawson: That's cool and all, but I'm gonna ask again.");
             }
             else {
               System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
             }
           }
-          delayTime(3000); // back to regular dialogue
+          delayTime(6000); // back to regular dialogue
           System.out.println("Miner Dawson: Step into the ship, and go from there.");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("(The ship's doors open, and you take a step into the tight, although oddy comfortable, space, and sit in a black, leather chair in front of a glass window.)");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("(The ship's door closes, and the machine begins speaking to you.");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("Machine: Hello. I have not been given a name yet, but you can call me Machine. ");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("Machine: I've been programmed by Mr. Dawson to take you on a little adventure. I've been ordered not to take you back up to the station until we get $15 as well as 200 pounds of materials. Apologies for the immediate and rapid lanch, but we are in a hurry. So, we will venture in three. two.. one.. ");
-          delayTime(1000);
+          delayTime(6000);
           System.out.println("(A hatch in the stadium's floor opens, and the ship begins digging through aggressively.)");
-          delayTime(1000);
+          delayTime(6000);
           System.out.println("Machine: Dawson did not mention this, but there are dangerous, sneaky moles inside the dirt. Please be careful, because I don't want to get damaged, for us machines have feelings too. I also was not programmed to say these exact words.");
-          delayTime(1000);
+          delayTime(6000);
           System.out.println("(Dirt and soil stain your window as you make your way through underground tunnels.)");
-          delayTime(1000);
+          delayTime(6000);
           System.out.println("Machine: I am sure you are familiar with the value and weight of materials. However, I have been programmed to inform you that each bronze block carries $1 worth of goods and weighs 12 pounds, each silver block carries $2 worth of goods and weighs 24 pounds, each gold block carries $4 worth of goods and weighs 48 pounds, and each diamond block carries $8 worth of goods and weighs 96 pounds.");
-          delayTime(3000);
+          delayTime(6000);
           System.out.println("(Although much information has been thrown at you, you slowly, but surely, grasp everything that has been said as the ship shakes while digging through the dirt and soil. You start to hear rumbling, and the subtle smirk on your face assures you that your journey has just truly begin now.");
           break; // this ends the nested while loop.
       }
