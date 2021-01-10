@@ -125,13 +125,15 @@ public class App {
               String answer = input.nextLine(); // // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
               if (answer.equalsIgnoreCase("yes")){ // If the user inputs yes, then the below happens. ( user might forget to captialize "yes", but as long as they spell it correctly, the program will accept the input.)
                 delayTime(1000);
-                MinerObj.printStats(); // call the printStats() method on the object, which will print out the player's wealth, inventory, weight in pounds of their inventory, and the health of their ship.
+                MinerObj.printStats();
+                break; // call the printStats() method on the object, which will print out the player's wealth, inventory, weight in pounds of their inventory, and the health of their ship.
               }
               else if(answer.equalsIgnoreCase("no")){ // if the user inputs no, then the below happens. ( user might forget to capitalize "no", but as long as they spell it correctly, the program will accept the input. )
                 delayTime(1000);
                 System.out.println("Machine: Okay.");
                 delayTime(500); // no method on the object is called.
                 System.out.println("(The machine begins to move and dig rapidly in order to find potential resources across the dirt tunnels.)");
+                break;
                 delayTime(3000);
               }
               else{
