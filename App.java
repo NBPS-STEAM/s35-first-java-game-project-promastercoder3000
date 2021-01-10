@@ -42,6 +42,7 @@ public class App {
               System.out.println("Miner Dawson: Alright, let's go!");
               break; // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the dialogue ceontinues.
             }
+          
             else if (answer.equalsIgnoreCase("no")){ // user might type no ( for whatever reason), and whether it is capitalized or not, the program offers a humorous response back, and the while loop continues to reiterate.
               delayTime(3000);
               System.out.println("Miner dawson: That's cool and all, but I'm gonna ask again.");
@@ -133,8 +134,8 @@ public class App {
                 System.out.println("Machine: Okay.");
                 delayTime(500); // no method on the object is called.
                 System.out.println("(The machine begins to move and dig rapidly in order to find potential resources across the dirt tunnels.)");
-                break;
                 delayTime(3000);
+                break;
               }
               else{
                 System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
@@ -170,3 +171,4 @@ public class App {
     }
 
      
+// LINK TO VIDEO: https://youtu.be/sRVVGmh0JN8
