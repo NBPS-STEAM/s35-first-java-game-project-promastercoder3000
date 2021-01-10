@@ -27,7 +27,7 @@ public class App {
           delayTime(3000);
           System.out.println("(Sounds hard? Well, that's life. Let's get started!)");
           delayTime(3000);
-          System.out.println("(The game has begun, and miner Dawson meets you at the mining station.");
+          System.out.println("(The game has begun, and Miner Dawson meets you at the mining station.");
           delayTime(3000);
           System.out.println("Miner Dawson: Greetings, fellow miner.");
           delayTime(3000);
@@ -39,7 +39,7 @@ public class App {
             String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
             if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
               delayTime(3000);
-              System.out.println("Miner Dawson: Alright, lets go!");
+              System.out.println("Miner Dawson: Alright, let's go!");
               break; // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the dialogue ceontinues.
             }
             else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason), and whether it is capitalized or not, the program offers a humorous response back, and the while loop continues to reiterate.
@@ -60,16 +60,17 @@ public class App {
           System.out.println("Machine: Hello. I have not been given a name yet, but you can call me Machine. ");
           delayTime(3000);
           System.out.println("Machine: I've been programmed by Mr. Dawson to take you on a little adventure. I've been ordered not to take you back up to the station until we get $15 as well as 200 pounds of materials. Apologies for the immediate and rapid lanch, but we are in a hurry. So, we will venture in three. two.. one.. ");
-          delayTime(1000);
+          delayTime(4000);
           System.out.println("(A hatch in the stadium's floor opens, and the ship begins digging through aggressively.)");
-          delayTime(1000);
-          System.out.println("Machine: Dawson did not mention this, but there are dangerous, sneaky moles inside the dirt. Please be careful, because I don't want to get damaged, for us machines have feelings too. I also was not programmed to say these exact words.");
-          delayTime(1000);
-          System.out.println("(Dirt and soil stain your window as you make your way through underground tunnels.)");
-          delayTime(1000);
-          System.out.println("Machine: I am sure you are familiar with the value and weight of materials. However, I have been programmed to inform you that each bronze block carries $1 worth of goods and weighs 12 pounds, each silver block carries $2 worth of goods and weighs 24 pounds, each gold block carries $4 worth of goods and weighs 48 pounds, and each diamond block carries $8 worth of goods and weighs 96 pounds.");
           delayTime(3000);
+          System.out.println("Machine: Dawson did not mention this, but there are dangerous, sneaky moles inside the dirt. Please be careful, because I don't want to get damaged, for us machines have feelings too. I also was not programmed to say these exact words.");
+          delayTime(5000);
+          System.out.println("(Dirt and soil stain your window as you make your way through underground tunnels.)");
+          delayTime(2000);
+          System.out.println("Machine: I am sure you are familiar with the value and weight of materials. However, I have been programmed to inform you that each bronze block carries $1 worth of goods and weighs 12 pounds, each silver block carries $2 worth of goods and weighs 24 pounds, each gold block carries $4 worth of goods and weighs 48 pounds, and each diamond block carries $8 worth of goods and weighs 96 pounds.");
+          delayTime(7000);
           System.out.println("(Although much information has been thrown at you, you slowly, but surely, grasp everything that has been said as the ship shakes while digging through the dirt and soil. You start to hear rumbling, and the subtle smirk on your face assures you that your journey has just truly begin now.");
+          delayTime(5000);
           break; // this ends the nested while loop.
       }
     // end of first nested while loop
