@@ -32,17 +32,17 @@ public class App {
           System.out.println("Miner Dawson: Greetings, fellow miner.");
           delayTime(3000);
           System.out.println("Miner Dawson: We've built a brand-new 'Dirt-Stone Digging Machine' for you. It can speak and burrow through the Earth quicky and efficiently. Would you like to hop in and go on a.. ");
-          delayTime(1000);
+          delayTime(4000);
           System.out.println("Miner Dawson: Mining trip!?!?!");
           while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
             System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
             String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
-            if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
+            if (answer.equalsIgnoreCase("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
               delayTime(3000);
               System.out.println("Miner Dawson: Alright, let's go!");
               break; // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, the dialogue ceontinues.
             }
-            else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason), and whether it is capitalized or not, the program offers a humorous response back, and the while loop continues to reiterate.
+            else if (answer.equalsIgnoreCase("no")){ // user might type no ( for whatever reason), and whether it is capitalized or not, the program offers a humorous response back, and the while loop continues to reiterate.
               delayTime(3000);
               System.out.println("Miner dawson: That's cool and all, but I'm gonna ask again.");
             }
@@ -81,13 +81,13 @@ public class App {
             while(true){ // nested while loop, will keep on repeating until the player says "Yes". they don't have any other option because the purpose of this program is for the user to mine through the ground. 
               System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
               String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
-              if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // user might forget to capitalize, or might capitalize wrong letters, which is okay, as long as they spell "yes" correctly.
+              if (answer.equalsIgnoreCase("yes")){ // user might forget to capitalize, or might capitalize wrong letters, which is okay, as long as they spell "yes" correctly.
                 delayTime(3000);
                 System.out.println("Machine: Affirmative. Approaching...");
                 MinerObj.takeDamageOrFindMaterial();
                 break;
               }
-              else if (answer.equals("No") || answer.equals("no") || answer.equals("nO") || answer.equals("NO")){ // user might type no ( for whatever reason). (capitalization doesnt matter)
+              else if (answer.equalsIgnoreCase("no")){ // user might type no ( for whatever reason). (capitalization doesnt matter)
                 delayTime(3000);
                 System.out.println("Machine: Okay, we will bail out. You are quite a boring one.");
                 delayTime(3000);
@@ -123,11 +123,11 @@ public class App {
             while(true){
               System.out.println("Machine: Would you like to know your current statistics?");
               String answer = input.nextLine(); // // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
-              if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // If the user inputs yes, then the below happens. ( user might forget to captialize "yes", but as long as they spell it correctly, the program will accept the input.)
+              if (answer.equalsIgnoreCase("yes")){ // If the user inputs yes, then the below happens. ( user might forget to captialize "yes", but as long as they spell it correctly, the program will accept the input.)
                 delayTime(1000);
                 MinerObj.printStats(); // call the printStats() method on the object, which will print out the player's wealth, inventory, weight in pounds of their inventory, and the health of their ship.
               }
-              else if(answer.equals("No") || answer.equals("no") || answer.equals("nO") || answer.equals("NO")){ // if the user inputs no, then the below happens. ( user might forget to capitalize "no", but as long as they spell it correctly, the program will accept the input. )
+              else if(answer.equalsIgnoreCase("no")){ // if the user inputs no, then the below happens. ( user might forget to capitalize "no", but as long as they spell it correctly, the program will accept the input. )
                 delayTime(1000);
                 System.out.println("Machine: Okay.");
                 delayTime(500); // no method on the object is called.
@@ -141,26 +141,28 @@ public class App {
               }
 
             }
-      }    
+          
         System.out.println("(Would you like to restart the game?)");
         while(true){ // nested while loop
             System.out.println("(For the essentiality of the game, type 'Yes' or 'No'.) ");
             String answer = input.nextLine(); // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
-            if (answer.equals("Yes") || answer.equals("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
+            if (answer.equalsIgnoreCase("yes")){ // user might forget to capitalize, which is okay, as long as they spell "yes" correctly.
               delayTime(2000);
               System.out.println("(Nice! Let's get this show going again. This time, it won't be your first rodeo, so you'll breeze through the game easily! Let's restart.)");
               delayTime(3000);
               break; // while loop finishes reiterating once "break" is called. ( this only applies towards the nested while loop, not the parent or the parent's parent while loop themselves.) Once the user has answered yes, we go back to the beginning of the MAIN while loop.
             }
-            else if (answer.equals("No") || answer.equals("no")){ // user might type no ( for whatever reason), and whether it is capitalized or not, the program offers a humorous response back, and both the main loop and the nested while loop we are currently in will both end, as we set loopVar to false, and the loop can only run when it is set to true; additionally, we break out of this nested loop completely.
+            else if (answer.equalsIgnoreCase("no")){ // user might type no ( for whatever reason), and whether it is capitalized or not, the program offers a humorous response back, and both the main loop and the nested while loop we are currently in will both end, as we set loopVar to false, and the loop can only run when it is set to true; additionally, we break out of this nested loop completely.
               delayTime(2000);
               System.out.println("(Okay! Have a great day then.)");
-              loopVar = false; // we set the loopVar variable to false, which is the boolean variable the program is based on, so when it turns false, we are essentially ending the ENTIRE program, which is one big while loop.
+              loopVar = false; // we set the loopVar variable to false, which is the boolean variable the program is based on, so when it turns false, we are essentially ending the ENTIRE program, which is one big while loop. after we break out of this nested while loop, we will go back to the beginning of the loop, and loopVar will be set to false, so essentially, the entire program will end.
               break; // This is topped off by ending the nested while loop with a break statement.
             }
             else {
               System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
             }
+        }
+        //end of the MAIN while loop.
           }
 }
     }
