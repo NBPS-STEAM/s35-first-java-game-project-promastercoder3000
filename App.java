@@ -119,7 +119,7 @@ public class App {
               break;
             }
             delayTime(2000);
-            while true(){
+            while(true){
               System.out.println("Machine: Would you like to know your current statistics?");
               String answer = input.nextLine(); // // referring back to the scanner object we created on line 5, we first create a string variable called "answer", then, using the nextLine() method from the scanner class, we enact this method upon the "input" object we had instantiated, opening up a way for us to collect a string-type input from the user which will answer 
               if (answer.equals("Yes") || answer.equals("yes") || answer.equals("yEs") || answer.equals("yeS") || answer.equals("YeS") || answer.equals("YEs") || answer.equals("yES") || answer.equals("YES")){ // If the user inputs yes, then the below happens. ( user might forget to captialize "yes", but as long as they spell it correctly, the program will accept the input.)
@@ -128,16 +128,16 @@ public class App {
               }
               else if(answer.equals("No") || answer.equals("no") || answer.equals("nO") || answer.equals("NO")){ // if the user inputs no, then the below happens. ( user might forget to capitalize "no", but as long as they spell it correctly, the program will accept the input. )
                 delayTime(1000);
-                System.out.println("Machine: Okay."); // no method on the object is called.
+                System.out.println("Machine: Okay.");
+                delayTime(500); // no method on the object is called.
+                System.out.println("(The machine begins to move and dig rapidly in order to find potential resources across the dirt tunnels.)");
+                delayTime(3000);
               }
               else{
                 System.out.println("(You must have made a spelling mistake. Make sure you typed 'Y-e-s' or 'N-o'.)"); // if the user has made a spelling mistake, this else statement will execute, where the program states that the user has made a spelling mistake, where they are redirected towards inputting a yes/no to the question asked.
               }
 
               }
-            delayTime(3000);
-            System.out.println("(The machine begins to move and dig rapidly in order to find potential resources across the dirt tunnels.)");
-            delayTime(3000);
 
             }
       }    
